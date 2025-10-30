@@ -1,0 +1,56 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block title %}
+<title>All appointments</title>
+{% endblock %}
+
+{% block content %}
+
+{%for message in messages%}
+
+
+    <p class="alert alert-warning text-center">{{message}}</p>
+
+{%endfor%}
+
+<h1 class="text-center mt-4 text-primary">List of Booked Appointments</h1>
+
+<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi, architecto asperiores at corporis cumque doloribus fugiat ipsa ipsum laudantium nam numquam odio pariatur quaerat recusandae reiciendis rerum sequi ullam!</span><span>Delectus deserunt distinctio esse excepturi non perferendis provident quia ratione reiciendis tempore! Alias aliquam aspernatur, beatae debitis dolores doloribus eum ex facere laborum modi nesciunt omnis repellat reprehenderit vel, vitae!</span><span>Ab eaque fugit minus provident qui similique ut? Ab adipisci aliquam assumenda expedita minima placeat tenetur veniam vitae? Adipisci culpa dolorum eos exercitationem labore nihil nulla pariatur quae quaerat sint?</span></p>
+
+
+
+<table class="table table-bordered table-primary">
+<tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Date and Time</th>
+    <th>Department</th>
+    <th>Doctor</th>
+    <th>Message</th>
+    <th>Action</th>
+</tr>
+
+    {% for  x in allappointments %}
+        <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.email }}</td>
+            <td>{{ x.phone }}</td>
+            <td>{{ x.date }}</td>
+            <td>{{ x.department }}</td>
+            <td>{{ x.doctor }}</td>
+            <td>{{ x.message }}</td>
+            <td>
+                <a href="/edit/{{x.id}}"class = "btn btn-warning">Edit</a>
+                <a href="/delete/{{ x.id }}" class = "btn btn-danger">Delete</a>
+            </td>
+        </tr>
+
+
+    {% endfor %}
+
+</table>
+
+
+{% endblock %}
