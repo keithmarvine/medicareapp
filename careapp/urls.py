@@ -18,6 +18,14 @@ urlpatterns = [
     path('edit/<int:id>', views.edit),
     path('', views.register, name = 'register'),
     path('login/', views.login_view, name = 'login'),
+    #Mpesa URLS
+    path('pay/', views.pay, name='pay'),
+
+    path('stk/', views.stk, name='stk'),
+    path('token/', views.token, name='token'),
+    path('payment-result/', views.payment_result, name='payment_result'),
+    path('transactions/', views.transactions_list, name='transactions'),
+
 
 
 
