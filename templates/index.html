@@ -98,7 +98,7 @@
       <div class="container position-relative">
 
         <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
-          <h2>WELCOME TO MEDILAB</h2>
+          <h2>WELCOME {%if user.is_authenticated %}{{user.username}} {% else %}Guest{%endif%} TO MEDILAB</h2>
           <h5>We are team of health professionals concerned about the quality of your health</h5>
         </div><!-- End Welcome -->
 
